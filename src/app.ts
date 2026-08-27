@@ -9,6 +9,11 @@ export function buildApp() {
     logger: true,
   });
 
+   // Root route
+  app.get("/", async (request, reply) => {
+    return reply.redirect("/docs");
+  });
+
   app.register(swagger, {
     openapi: {
       info: {
